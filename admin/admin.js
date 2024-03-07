@@ -32,7 +32,7 @@ async function get() {
   page = atob(resp.data.content)
   pageHTML = stringToHTML(page)
   let i = 0
-  pageHTML.body.querySelectorAll("*").forEach(el => {
+  pageHTML.body.querySelectorAll("h1, h2, h3, h4, h5, h6, p, a, b, button").forEach(el => {
     i++
     el.setAttribute("data-editor-id", i)
   })

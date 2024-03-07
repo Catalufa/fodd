@@ -15,7 +15,7 @@ async function get() {
   // page = await fetch("/")
   //   .then(response => response.text())
   let cookie = getCookie("token")
-  if (!cookie) {
+  if (!cookie || cookie=="null") {
     cookie = prompt("Enter your unique token")
   }
   await initGit(cookie)
@@ -63,7 +63,7 @@ function update(refEl) {
 document.querySelector("[data-save]").addEventListener("click", async function() {
   this.innerHTML = "Saving..."
   let cookie = getCookie("token")
-  if (!cookie) {
+  if (!cookie || cookie=="null") {
     cookie = prompt("Enter your unique token")
   }
   await initGit(cookie)

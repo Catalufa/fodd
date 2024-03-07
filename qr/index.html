@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Friends of Denton Dene</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section id="qr">
+    <h1>FODD QR Generator</h1>
+    <input type="text" placeholder="Page name...">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://friendsofdentondene.org/" alt="QR Code">
+    <p>Right click on the QR Code to save it</p>
+    <b>Make sure to scan the QR Code to test it!</b>
+  </section>
+  <style>
+    * {
+      margin: 0;
+      font-family: "Red Hat Display", sans-serif;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background: #397b57;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    section#qr {
+      max-width: calc(100% - 20px);
+      width: 450px;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      background: white;
+      border: 3px solid #397b57;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+    }
+
+    img {
+      padding: 10px;
+      box-sizing: border-box;
+      max-width: 50%;
+    }
+  </style>
+  <script>
+    i = document.querySelector("input");
+    i.addEventListener("input", function () {
+      console.log("test")
+      document.querySelector("img").src = "https://api.qrserver.com/v1/create-qr-code/?data=https://friendsofdentondene.org/p?" + i.value
+    })
+
+  </script>
+</body>
+
+</html>

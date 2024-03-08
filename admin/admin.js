@@ -25,7 +25,8 @@ async function get() {
     repo: 'fodd',
     path: 'index.html',
     headers: {
-      'X-GitHub-Api-Version': '2022-11-28'
+      'X-GitHub-Api-Version': '2022-11-28',
+      'timestamp': Date.now()
     }
   })
   console.log(resp.data.content)

@@ -26,7 +26,7 @@ async function get() {
     path: 'index.html',
     headers: {
       'X-GitHub-Api-Version': '2022-11-28',
-      'timestamp': Date.now()
+      'If-None-Match': ''
     }
   })
   console.log(resp.data.content)

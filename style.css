@@ -249,6 +249,6 @@ h2 {
   }
 
   nav>span:nth-child(odd) {
-    background: var(--bg-dark)
+    background: /*var(--bg-dark)*/#dfdfdf;
   }
 }

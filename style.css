@@ -27,8 +27,8 @@ nav {
   padding: 10px;
   box-sizing: border-box;
   z-index: 3;
-  color: white;
-  background: var(--bg);
+  color: /*white*/black;
+  background: /*var(--bg)*/white;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
@@ -122,6 +122,7 @@ section#about {
   padding: 15px;
   box-sizing: border-box;
   color: black;
+  background: var(--primary)
 }
 
 h2 {
@@ -140,7 +141,7 @@ h2 {
   width: calc(33% - 20px);
   padding: 15px;
   box-sizing: border-box;
-  background: var(--primary);
+  background: /*var(--primary)*/white;
   border-radius: 20px;
   margin: 10px;
   aspect-ratio: 1/1;

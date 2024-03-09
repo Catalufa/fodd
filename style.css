@@ -12,6 +12,7 @@
 
 .cursive {
   font-family: 'Pacifico', cursive;
+  font-weight: normal;
 }
 
 html {
@@ -62,7 +63,7 @@ section#cover {
   padding: 10% 10% 0;
   box-sizing: border-box;
   display: flex;
-  color: white;
+  color: black;
 }
 
 #cover .cover {

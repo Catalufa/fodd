@@ -2,11 +2,16 @@
   --primary: #99BC44;
   --bg: #397B57;
   --bg-dark: #306949;
+  --bg-light: #f9ffea;
 }
 
 * {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+}
+
+.cursive {
+  font-family: 'Pacifico', cursive;
 }
 
 html {
@@ -27,8 +32,8 @@ nav {
   padding: 10px;
   box-sizing: border-box;
   z-index: 3;
-  color: /*white*/black;
-  background: /*var(--bg)*/white;
+  color: white;
+  background: var(--primary);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
@@ -41,6 +46,9 @@ nav {
 #nav-logo {
   height: 100%;
   padding-right: 10px;
+/*   hide logo */
+  opacity: 0;
+  width: 0;
 }
 
 nav>span {
@@ -50,7 +58,7 @@ nav>span {
 section#cover {
   width: 100%;
   height: 80vh;
-  background: var(--bg);
+  background: var(--bg-light);
   padding: 10% 10% 0;
   box-sizing: border-box;
   display: flex;
@@ -73,6 +81,12 @@ section#cover {
 
 #cover-left h1 {
   font-size: 4rem;
+}
+
+#cover-left #header-logo {
+  height: 100px;
+  width: 100px;
+  padding: 10px;
 }
 
 #cover-middle {
@@ -122,11 +136,13 @@ section#about {
   padding: 15px;
   box-sizing: border-box;
   color: black;
-  background: var(--primary)
+  background: var(--primary);
 }
 
 h2 {
   font-size: 2.5rem;
+  color: white;
+  text-align: center;
 }
 
 #about-cards {

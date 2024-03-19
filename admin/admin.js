@@ -69,7 +69,7 @@ document.querySelector("[data-save]").addEventListener("click", async function()
   }
   await initGit(cookie)
   setCookie("token", cookie, 7)
-  let response = await updateFile(`<html>${pageHTML.head.innerHTML}${pageHTML.body.innerHTML}</html>`)
+  let response = await updateFile(`<html><head>${pageHTML.head.innerHTML}</head><body>${pageHTML.body.innerHTML}</body></html>`)
   console.log(response)
   if (!response) {
     alert("Invalid token")

@@ -82,7 +82,10 @@ document.querySelector("[data-save]").addEventListener("click", async function()
 
 async function updateFile(content) {
   const result = await octo.request('GET /repos/{owner}/{repo}/contents/{file_path}', {
-    owner: "Catalufa", repo: "fodd", file_path: "index.html", branch: "main"
+    owner: "Catalufa", repo: "fodd", file_path: "index.html", branch: "main",
+    headers: {
+      'If-None-Match': ''
+    }
   })
 
   try {

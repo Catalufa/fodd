@@ -11,12 +11,16 @@ window.initGit = async function initGit(token) {
   })
 }
 
-async function get() {
+async function get(forceCookie) {
   // page = await fetch("/")
   //   .then(response => response.text())
   let cookie = getCookie("token")
-  if (!cookie || cookie=="null") {
+  if ((!cookie || cookie=="null") || forceCookie) {
+    document.querySelector("#preload").style.display = "none";
     cookie = prompt("Enter your unique token")
+  }
+  if (!cookie) {
+    window.location.reload()
   }
   await initGit(cookie)
   setCookie("token", cookie, 7)
@@ -29,8 +33,13 @@ async function get() {
       'If-None-Match': ''
     }
   })
+    .catch(error => {
+      alert("Invalid token")
+      get(true)
+    })
   console.log(resp.data.content)
   page = atob(resp.data.content)
+  document.querySelector("#preload").style.display = "none";
   pageHTML = stringToHTML(page)
   let i = 0
   pageHTML.body.querySelectorAll("h1, h2, h3, h4, h5, h6, p, a, b, button").forEach(el => {
@@ -65,7 +74,11 @@ document.querySelector("[data-save]").addEventListener("click", async function()
   this.innerHTML = "Saving..."
   let cookie = getCookie("token")
   if (!cookie || cookie=="null") {
+    document.querySelector("#preload").style.display = "none";
     cookie = prompt("Enter your unique token")
+  }
+  if (!cookie) {
+    window.location.reload()
   }
   await initGit(cookie)
   setCookie("token", cookie, 7)
@@ -74,6 +87,7 @@ document.querySelector("[data-save]").addEventListener("click", async function()
   if (!response) {
     alert("Invalid token")
     deleteCookie("token")
+    window.location.reload()
   }
 
   this.innerHTML = "Save"
@@ -126,11 +140,12 @@ function getCookie(cname) {
   return "";
 }
 
-function deleteCookie(name, path, domain) {
-  if (getCookie(name)) {
-    document.cookie = name + "=" +
-      ((path) ? ";path=" + path : "") +
-      ((domain) ? ";domain=" + domain : "") +
-      ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
-  }
+// function deleteCookie(name, path, domain) {
+//   if (getCookie(name)) {
+//     document.cookie = name + "=null"
+//   }
+// }
+
+function deleteCookie(name) {   
+  document.cookie = name+'=; Max-Age=-99999999;';  
 }

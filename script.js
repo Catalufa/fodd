@@ -22,14 +22,44 @@ navSpans.forEach(span => {
     if (targetText != "home") {
       newHref = targetText
     }
-    // window.location.href = newHref
-    Swal.fire("Whoops!", "We're still working on our website. That page is coming soon!", "info")
+    window.location.href = newHref
+    // Swal.fire("Whoops!", "We're still working on our website. That page is coming soon!", "info")
   })
 })
 
-let buttons = document.querySelectorAll("button:not([data-save])")
-buttons.forEach(btn => {
-  btn.addEventListener("click", evt => {
-    Swal.fire("Whoops!", "We're still working on our website. That page is coming soon!", "info")
+fetch("https://corsproxy.io/?https%3A%2F%2Ffetchrss.com%2Frss%2F661a64e4d2d9ca71f230a082661a64b5f78c3c185e2727d2.atom")
+  .then(response => response.text())
+  .then(xml => {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xml,"text/xml");
+  entries = xmlDoc.querySelectorAll("entry")
+  entries.forEach(e => {
+      document.querySelector("#about-cards").appendChild(e)
   })
+document.querySelectorAll("[type='html']").forEach(el => {
+    var parsedHtml = parser.parseFromString(el.innerHTML, 'text/html');
+    
+    // Now, parsedHtml contains the parsed HTML as a document object
+    let newText = parsedHtml.body.innerText;
+    try {
+      let newTitle = temp1.innerHTML.split("#")[1].split("<br>")[0];
+      newTextList = newText.split("<br>")
+      newTextList.shift()
+      newText = newTextList.join("<br>")
+      el.parentElement.querySelector("title").innerText = newTitle
+    } catch {}
+    el.innerHTML = newText
 })
+document.querySelectorAll("updated").forEach(el => {
+    el.innerHTML = pDate(el.innerHTML).Formatted
+})
+
+})
+
+document.body.addEventListener("click", e => {
+  if (e.target.tagName == "entry") {
+    e.target.classList.add("open")
+  }
+})
+
+const pDate=(d)=>(f=new Date(d))&&{Formatted:f.toLocaleDateString('en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'numeric',hour12:true})};

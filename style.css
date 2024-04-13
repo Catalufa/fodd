@@ -182,6 +182,7 @@ h2 {
   font-size: 2.5rem;
   color: white;
   text-align: center;
+  padding-bottom: 15px;
 }
 
 #about-cards {
@@ -247,6 +248,8 @@ a:hover, nav>span:hover {
 
 
 @media only screen and (max-width: /*825*/1200px) {
+
+  
   #cover {
     flex-direction: column;
     justify-content: center;
@@ -316,6 +319,15 @@ a:hover, nav>span:hover {
 }
 
 @media only screen and (max-width: 1000px) {
+
+  nav::after {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    content: "Menu";
+    font-size: 1.2rem;
+}
+
   nav {
     flex-direction: column;
     /* position: absolute; */
@@ -345,4 +357,99 @@ a:hover, nav>span:hover {
   nav>span:nth-child(odd) {
     background: var(--bg);
   }
+}
+
+
+/*---------------------------------------*/
+entry[class='open'] {
+  max-height: fit-content !important;
+}
+
+entry {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-height: 300px;
+  position: relative;
+}
+
+
+title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+link {
+  text-decoration: none;
+  color: var(--bg-dark);
+  font-weight: 600;
+  position: relative;
+  box-shadow: inset 0 -2px 0 var(--bg-dark);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+content {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+content span {
+  display: none;
+}
+
+name {
+  font-weight: bold;
+  font-style: italic;
+}
+
+name::before {
+  content: "by ";
+}
+
+updated {
+  display: block;
+}
+
+id {
+  display: none;
+}
+
+content img {
+  float: left;
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  margin: 5px;
+}
+
+entry:not(.open)::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "Click to keep reading";
+  width: 100%;
+  height: 50px;
+  background: var(--bg-dark);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+img[src=""] {
+  display: none;
 }

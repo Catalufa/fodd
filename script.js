@@ -27,7 +27,7 @@ navSpans.forEach(span => {
   })
 })
 
-fetch("https://corsproxy.io/?https%3A%2F%2Ffetchrss.com%2Frss%2F661a64e4d2d9ca71f230a082661a64b5f78c3c185e2727d2.atom")
+fetch("https://corsproxy.io/?https://fetchrss.com/rss/66e5d00d8ebc14c9e604b75266e5cfe7e156b60b5b006862.atom")
   .then(response => response.text())
   .then(xml => {
   const parser = new DOMParser();

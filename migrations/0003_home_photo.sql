@@ -1,0 +1,1 @@
+UPDATE pages SET content=json_insert(content,'$.sections[#]',json('{"type":"image","image":"/assets/bg.jpg","alt":"Woodland path in Denton Dene","caption":"","style":{"position":"center"}}')) WHERE slug='home' AND NOT EXISTS(SELECT 1 FROM json_each(pages.content,'$.sections') WHERE json_extract(value,'$.type')='image');

@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fodd-website",
+  "main": "src/worker.js",
+  "account_id": "9f0bca03febd803f5ebb472b74a1d206",
+  "compatibility_date": "2026-10-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {"directory":"./public","binding":"ASSETS","run_worker_first":true,"html_handling":"none","not_found_handling":"none"},
+  "d1_databases": [{"binding":"DB","database_name":"fodd-content","database_id":"ee5163fc-07d9-4dfd-be07-adc0ca16b214","migrations_dir":"migrations"}],
+  "r2_buckets": [{"binding":"MEDIA","bucket_name":"fodd-media"}],
+  "vars": {"PUBLIC_ORIGIN":"https://friendsofdentondene.org","STAGING":"true"},
+  "observability": {"enabled":true},
+  "build": {"command":"npm run build"}
+}
+

@@ -1,0 +1,1 @@
+UPDATE pages SET content=json_set(content,'$.sections[1].image','/assets/Halloween%20(1).jpg') WHERE slug='events' AND json_extract(content,'$.sections[1].title')='Halloween family activities' AND json_extract(content,'$.sections[1].image')='';

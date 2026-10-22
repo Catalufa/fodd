@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+.dev.vars*
+*.secret.json
+*.private.sql
+test-results/
+public/vendor/
+public/qr.js
+worker-configuration.d.ts

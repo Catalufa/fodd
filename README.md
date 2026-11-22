@@ -37,7 +37,7 @@ The current route was deployed without DNS edits. If it fails, remove or revert 
 
 ## Volunteer editing
 
-Visit `/admin`, log in, select a page and click its text in the live view to edit it. Select a paragraph, button or image to show its controls in the top toolbar. Links and buttons in the editor select content without opening their destination. The live view fills the screen below the toolbar. Photo controls include size, crop fit and focal position.
+Visit `/admin`, log in, select a page and click its text in the live view to edit it. Select a paragraph, button or image to show its controls. Use the arrows on the item to move it, the cross to delete it, and the plus above or below to insert content. Adding a photo opens an upload and library picker; Undo restores local changes. Links and buttons in the editor select content without opening their destination. The live view fills the screen below the toolbar. Photo controls include size, crop fit and focal position.
 
 Use `/admin/forms` to create private-link forms with short text, paragraph, email, number, date, choice, checkbox and dropdown questions. Move questions up or down; save to obtain the unique `/forms/<id>` link. Each form has its own response list and CSV download. Browser notifications can be enabled per form; they alert while the forms admin page is open and notification permission is granted. Background push after the page closes is not implemented.
 

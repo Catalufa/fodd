@@ -1,0 +1,3 @@
+CREATE TABLE forms (id TEXT PRIMARY KEY, title TEXT NOT NULL, description TEXT NOT NULL DEFAULT '', questions TEXT NOT NULL, active INTEGER NOT NULL DEFAULT 1, notify INTEGER NOT NULL DEFAULT 0, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE form_responses (id TEXT PRIMARY KEY, form_id TEXT NOT NULL, answers TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE INDEX form_responses_form ON form_responses(form_id,created_at DESC);

@@ -17,6 +17,6 @@ Acceptance mapping:
 - QR: generate only actual navigation URLs locally.
 - CMS: D1 content, R2 uploads, authentication, session/CSRF/lockout, safe rich text, structured styles, drafts, preview, revisions, optimistic concurrency, document replacement, export.
 - Verification: local functional/security integration tests, browser review, remote persistence and upload tests, redeploy check.
-- Deployment: correct account verified via Wrangler. Account 9f0bca03febd803f5ebb472b74a1d206. Zone is absent from accessible zone list, so production cutover requires access. No DNS/mail changes authorised in another account.
+- Deployment update, 22 November 2026: zone `friendsofdentondene.org` was found in account `89602b8b17bae11858c45e68dfc0fa37`. The original content Worker, D1 and R2 stay in support account `9f0bca03febd803f5ebb472b74a1d206`. A domain Worker in the zone account routes the proxied apex to that Worker without altering DNS or mail. The public domain, admin, forms, media and a reversible edit were verified.
 
 Sources: Gmail thread IDs 1a0ec6f2e2ab0041, 18b8f26b09cd0568, 18e14792f7a7b1a2, 18e41ec2d8decfd9, 18e4dd8524f3bea4, 18e42d1eeddb085d, 18eccbeeefaf51f6, 18ed7780b78a7d82, 18f01e801e10cd0a, 18dd060844fa9ba2. Private correspondence is not committed.
